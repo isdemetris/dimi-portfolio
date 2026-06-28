@@ -285,7 +285,7 @@ export default function Portfolio() {
               fontWeight: 400,
             }}
           >
-            I direct video at scale. Most recently, developing a creative vision for video at Remote where strategy and execution are inseparable - every video feels intentional, unmistakably on-brand. Built a multi-talented team that brings that vision to life across brand, social, product, performance marketing. I'm equally at home in strategy as I am in the edit. I use AI to amplify taste, never replace it.
+            I direct video at scale. Most recently, developing a creative vision for video at Remote where strategy and execution are inseparable - every video feels intentional, unmistakably on-brand. Built a multi-talented team that brings that vision to life across brand, social, product, performance marketing.
           </p>
           <p
             style={{
@@ -354,7 +354,7 @@ export default function Portfolio() {
         <Section
           id="remote"
           title="Building at Remote"
-          subtitle="Scaling creative across a 2000-person organization"
+          subtitle="Scaling video across the 2000+ global HR tech platform. Remotely."
           isOpen={expandedSection === 'remote'}
         >
           <p style={{ fontSize: '15px', lineHeight: '1.7', margin: '0 0 1.25rem 0', color: '#555' }}>
