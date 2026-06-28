@@ -432,7 +432,7 @@ export default function Portfolio() {
             {
               title: 'd:code:it, London (5+ years)',
               body: 'Built and led video production for fintech. Worked with JP Morgan, Bank of America, and other heavily regulated clients where precision and compliance aren\'t negotiable. Learned that strong process protects both quality and sanity.',
-              video: '/assets/Visuals for d_code_it stand @ Fintech Connect 2019.mp4',
+              video: '/assets/Visuals-for-d_code_it-stand--Fintech-Connect_720.mp4',
             },
             {
               title: 'Kompany, Nicosia & London',
