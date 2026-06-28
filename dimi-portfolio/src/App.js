@@ -65,7 +65,7 @@ export default function Portfolio() {
     </div>
   );
 
-  const CaseStudyCard = ({ title, insight, role }) => (
+  const CaseStudyCard = ({ title, insight, role, youtubeId, localVideos }) => (
     <div
       style={{
         background: '#fafafa',
@@ -107,6 +107,50 @@ export default function Portfolio() {
       >
         {role}
       </p>
+      {youtubeId && (
+        <div style={{ marginTop: '1.25rem' }}>
+          <div
+            style={{
+              position: 'relative',
+              paddingBottom: '56.25%',
+              height: 0,
+              borderRadius: '6px',
+              overflow: 'hidden',
+            }}
+          >
+            <iframe
+              src={`https://www.youtube.com/embed/${youtubeId}`}
+              title="YouTube video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                border: 'none',
+              }}
+            />
+          </div>
+        </div>
+      )}
+      {localVideos && localVideos.length > 0 && (
+        <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          {localVideos.map((src, i) => (
+            <video
+              key={i}
+              src={src}
+              controls
+              style={{
+                width: '100%',
+                borderRadius: '6px',
+                display: 'block',
+              }}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 
@@ -187,7 +231,7 @@ export default function Portfolio() {
               fontWeight: 400,
             }}
           >
-            Strategic creative operations leader. I architect how organizations create and deploy video at scale — designing systems, processes, and tools that enable teams of any skill level to contribute at quality.
+            Strategic creative operations leader. I architect how organizations create and deploy video at scale, designing systems, processes, and tools that enable teams of any skill level to contribute at quality.
           </p>
           <p
             style={{
@@ -212,6 +256,11 @@ export default function Portfolio() {
             title="Big things start like this"
             insight="Everyone celebrates the billion-dollar valuation. Nobody talks about the Tuesday morning when the founder couldn't make payroll."
             role="Full production: concept through final delivery. Collaborated with brand director to translate positioning across product range (day-one startup to 1000-person scale) into a visceral creative system. Worked deep into strategic brief to protect the video outcome."
+            youtubeId="Dgf55Ydmy-E"
+            localVideos={[
+              '/assets/OOH_StartAnywhere_02_YT_15s.mp4',
+              '/assets/OOH_StartAnywhere_03_YT_6s.mp4',
+            ]}
           />
 
           <CaseStudyCard
