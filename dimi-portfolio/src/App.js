@@ -292,7 +292,7 @@ export default function Portfolio() {
               lineHeight: '1.7',
             }}
           >
-            Currently: Head of Video at Remote (2000-person organization). Previously: d:code:it, Reality Gaming.
+            Leading video at Remote and ΦΑΚ (independent production channel). Before: d:code:it (fintech, JP Morgan, BAML), Kompany (commercial video production).
           </p>
         </div>
 
