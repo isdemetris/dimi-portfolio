@@ -429,6 +429,18 @@ export default function Portfolio() {
           isOpen={expandedSection === 'credibility'}
         >
           {[
+            'I bring stories to life through motion.',
+            'For the past decade, I\'ve worked at the intersection of video, motion design, and brand - helping tech organizations express who they are through how they move on screen.',
+            'My focus has always been on building systems that scale creativity: motion frameworks, production workflows, visual languages that make complex stories feel effortless. The goal is to democratize without lowering the floor - templates that enable, never constrain. And bespoke when needed.',
+            'What I\'ve learned is simple: great creative work respects attention, has something original to say, and rests on a solid foundation. The kind that makes ideas not just aesthetically pleasing, but believable. That\'s what I chase - in strategy, in execution, in every frame.',
+            'You can\'t make great work without good environments. I make sure my teams are inspired, communication is clear, and that people have the space to be the best creative professionals they can be. That\'s where the real work happens.',
+          ].map((text, i) => (
+            <p key={i} style={{ fontSize: '15px', lineHeight: '1.7', margin: '0 0 1.25rem 0', color: '#555' }}>
+              {text}
+            </p>
+          ))}
+
+          {[
             {
               title: 'd:code:it, London (5+ years)',
               body: 'Built and led video production for fintech. Worked with JP Morgan, Bank of America, and other heavily regulated clients where precision and compliance aren\'t negotiable. Learned that strong process protects both quality and sanity.',
@@ -510,7 +522,7 @@ export default function Portfolio() {
               lineHeight: '1.7',
             }}
           >
-            Looking for Head of Video/Content/Strategy or Creative Operations roles where strategy, systems thinking, and team leadership matter.
+            Get in touch to build something together worth watching. All rights reserved Dimi 2026.
           </p>
           <p
             style={{
