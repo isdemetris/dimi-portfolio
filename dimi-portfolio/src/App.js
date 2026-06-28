@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 
 const REMOTE_GALLERY = [
-  { type: 'youtube', id: 'VAHr3zLpbzs' },
-  { type: 'youtube', id: 'cIUHczkp8aY' },
-  { type: 'youtube', id: 'TaWdzrCnrdI', start: 42 },
   { type: 'youtube', id: 'KBcWk5OAEMA' },
   { type: 'local', src: '/assets/remotegallery/CM_AskYourCFO_Michiel_01.mp4' },
   { type: 'local', src: '/assets/remotegallery/ChooseYourHire_1920x1080_Packshot.mp4' },
@@ -147,7 +144,7 @@ export default function Portfolio() {
     </div>
   );
 
-  const CaseStudyCard = ({ title, insight, role, youtubeId, localVideos }) => (
+  const CaseStudyCard = ({ title, insight, role, youtubeId, youtubeVideos, localVideos }) => (
     <div
       style={{
         background: '#fafafa',
@@ -189,32 +186,38 @@ export default function Portfolio() {
       >
         {role}
       </p>
-      {youtubeId && (
-        <div style={{ marginTop: '1.25rem' }}>
-          <div
-            style={{
-              position: 'relative',
-              paddingBottom: '56.25%',
-              height: 0,
-              borderRadius: '6px',
-              overflow: 'hidden',
-            }}
-          >
-            <iframe
-              src={`https://www.youtube.com/embed/${youtubeId}`}
-              title="YouTube video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
+      {(youtubeId || (youtubeVideos && youtubeVideos.length > 0)) && (
+        <div style={{ marginTop: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          {[
+            ...(youtubeId ? [{ id: youtubeId }] : []),
+            ...(youtubeVideos || []),
+          ].map((yt, i) => (
+            <div
+              key={i}
               style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                border: 'none',
+                position: 'relative',
+                paddingBottom: '56.25%',
+                height: 0,
+                borderRadius: '6px',
+                overflow: 'hidden',
               }}
-            />
-          </div>
+            >
+              <iframe
+                src={`https://www.youtube.com/embed/${yt.id}${yt.start ? `?start=${yt.start}` : ''}`}
+                title={`YouTube video ${i + 1}`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  border: 'none',
+                }}
+              />
+            </div>
+          ))}
         </div>
       )}
       {localVideos && localVideos.length > 0 && (
@@ -292,7 +295,7 @@ export default function Portfolio() {
               lineHeight: '1.7',
             }}
           >
-            Leading video at Remote and ΦΑΚ (independent production channel). Before: d:code:it (fintech, JP Morgan, BAML), Kompany (commercial video production).
+            Leading video at <a href="https://remote.com" style={{ color: 'inherit', textDecoration: 'underline' }}>Remote</a> and <a href="https://youtube.com/phaktv" style={{ color: 'inherit', textDecoration: 'underline' }}>ΦΑΚ</a> (independent production channel). Before: <a href="https://dcodeit.com" style={{ color: 'inherit', textDecoration: 'underline' }}>d:code:it</a> (fintech, JP Morgan, BAML), <a href="https://kompanycreative.com" style={{ color: 'inherit', textDecoration: 'underline' }}>Kompany</a> (commercial video production).
           </p>
         </div>
 
@@ -324,6 +327,17 @@ export default function Portfolio() {
             ]}
           />
 
+          <CaseStudyCard
+            title="A launch at Remote"
+            insight="A launch isn't one video. It's a system of videos, each doing a different job — together they make an announcement feel like a moment."
+            role="Three formats, one launch. A CEO piece where script and edit carry the weight of the announcement. A motion graphics film built on campaign key visuals, translating brand into motion. An external production for reach and polish. Each format serves a different context; all of them speak the same visual language."
+            youtubeVideos={[
+              { id: 'VAHr3zLpbzs' },
+              { id: 'cIUHczkp8aY' },
+              { id: 'TaWdzrCnrdI', start: 42 },
+            ]}
+          />
+
           <p
             style={{
               fontSize: '14px',
@@ -332,7 +346,7 @@ export default function Portfolio() {
               fontStyle: 'italic',
             }}
           >
-            Both campaigns show the same pattern: strategic insight → system design → production excellence.
+            Three campaigns, same pattern: strategic insight → system design → production excellence.
           </p>
         </Section>
 
