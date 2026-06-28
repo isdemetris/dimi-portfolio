@@ -9,9 +9,8 @@ const REMOTE_GALLERY = [
   { type: 'local', src: '/assets/remotegallery/ChooseYourHire_1920x1080_Packshot.mp4' },
   { type: 'local', src: '/assets/remotegallery/Concept01_1920x1080.mp4' },
   { type: 'local', src: '/assets/remotegallery/DancingMan_1080x1920_Packshot.mp4' },
-  { type: 'local', src: '/assets/remotegallery/NorthStarDemoVideo_16012024_Compressed.mp4' },
   { type: 'local', src: '/assets/remotegallery/OffMute_1920x1080.mp4' },
-  { type: 'local', src: '/assets/remotegallery/Remote Watchtower.mp4' },
+  { type: 'local', src: '/assets/remotegallery/RemoteRecruit_Teaser.mp4' },
   { type: 'local', src: '/assets/remotegallery/Revamp_PresentationVideo_Post.mp4' },
 ];
 
@@ -237,39 +236,6 @@ export default function Portfolio() {
     </div>
   );
 
-  const MetricCard = ({ label, value }) => (
-    <div
-      style={{
-        background: '#fafafa',
-        border: '1px solid #e5e5e5',
-        borderRadius: '8px',
-        padding: '1.25rem',
-        textAlign: 'center',
-      }}
-    >
-      <p
-        style={{
-          fontSize: '12px',
-          color: '#999',
-          margin: '0 0 0.5rem 0',
-          textTransform: 'uppercase',
-          letterSpacing: '0.05em',
-        }}
-      >
-        {label}
-      </p>
-      <p
-        style={{
-          fontSize: '22px',
-          fontWeight: 500,
-          margin: 0,
-          color: '#1a1a1a',
-        }}
-      >
-        {value}
-      </p>
-    </div>
-  );
 
   return (
     <>
@@ -353,9 +319,7 @@ export default function Portfolio() {
             insight="We too often focus on the how (automate, get leaner, go faster). Yet no one's talking about the what — what will you actually do with all that time our tools will free up?"
             role="Producer and strategic lead. Identified the positioning gap in Remote's messaging, designed a scalable video template system with clear flexibility guardrails (custom VO here, common VO there), built production pipeline and documentation to execute at volume across multiple products."
             localVideos={[
-              '/assets/what really matters/WorkOnWhatReallyMatters_Payroll_16-9.mp4',
               '/assets/what really matters/WorkOnWhatReallyMatters_Payroll_9-16.mp4',
-              '/assets/what really matters/WorkOnWhatReallyMatters_Payroll_9-16 2.mp4',
               '/assets/what really matters/WhatReallyMatters_Payroll_Text_9x16.mp4',
             ]}
           />
