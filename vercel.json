@@ -1,0 +1,4 @@
+{
+  "buildCommand": "cd dimi-portfolio && npm install && npm run build",
+  "outputDirectory": "dimi-portfolio/build"
+}
