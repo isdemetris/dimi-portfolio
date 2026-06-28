@@ -286,7 +286,7 @@ export default function Portfolio() {
               fontWeight: 400,
             }}
           >
-            I direct video at scale. Most recently, developing a creative vision for video at Remote where strategy and execution are inseparable - every video feels intentional, unmistakably on-brand. Built a multi-talented team that brings that vision to life across brand, social, product, performance marketing.
+            I direct video at scale. Most recently, developing a creative vision for video and motion design at Remote where strategy and execution are inseparable - every video feels intentional, unmistakably on-brand. Built a multi-talented team that brings that vision to life across brand, social, product, performance marketing.
           </p>
           <p
             style={{
