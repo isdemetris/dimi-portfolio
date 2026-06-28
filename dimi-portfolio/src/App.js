@@ -7,6 +7,7 @@ const REMOTE_GALLERY = [
   { type: 'local', src: '/assets/remotegallery/Concept01_1920x1080.mp4' },
   { type: 'local', src: '/assets/remotegallery/DancingMan_1080x1920_Packshot.mp4' },
   { type: 'local', src: '/assets/remotegallery/OffMute_1920x1080.mp4' },
+  { type: 'local', src: '/assets/remotegallery/Remote-Watchtower.mp4' },
   { type: 'local', src: '/assets/remotegallery/RemoteRecruit_Teaser.mp4' },
   { type: 'local', src: '/assets/remotegallery/Revamp_PresentationVideo_Post.mp4' },
 ];
