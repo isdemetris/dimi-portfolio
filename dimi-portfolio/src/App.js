@@ -466,7 +466,7 @@ export default function Portfolio() {
               video: '/assets/Visuals-for-d_code_it-stand--Fintech-Connect_720.mp4',
             },
             {
-              title: 'Kompany, Nicosia & London',
+              title: 'Kompany, Nicosia',
               body: 'Creative director and writer on commercial video campaigns for Lidl, Lay\'s, Snack A Jacks. Conceptualized and directed work from brief through delivery.',
             },
             {
