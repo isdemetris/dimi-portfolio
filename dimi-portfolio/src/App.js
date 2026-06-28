@@ -354,7 +354,7 @@ export default function Portfolio() {
         <Section
           id="remote"
           title="Building at Remote"
-          subtitle="Scaling video across the 2000+ global HR tech platform. Remotely."
+          subtitle="Video at scale: the Remote way"
           isOpen={expandedSection === 'remote'}
         >
           <p style={{ fontSize: '15px', lineHeight: '1.7', margin: '0 0 1.25rem 0', color: '#555' }}>
@@ -455,6 +455,10 @@ export default function Portfolio() {
           ))}
 
           {[
+            {
+              title: 'Remote — Video & Content Production Manager (2022–Present)',
+              body: 'Scaled video production for a 2000-person organization. Built systems, motion frameworks, and AI tooling to enable teams across brand, social, product, and performance marketing.',
+            },
             {
               title: 'd:code:it, London (5+ years)',
               body: 'Built and led video production for fintech. Worked with JP Morgan, Bank of America, and other heavily regulated clients where precision and compliance aren\'t negotiable. Learned that strong process protects both quality and sanity.',
