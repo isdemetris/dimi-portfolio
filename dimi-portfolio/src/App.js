@@ -302,7 +302,7 @@ export default function Portfolio() {
         {/* CASE STUDIES */}
         <Section
           id="campaigns"
-          title="Two campaigns"
+          title="Three campaigns"
           subtitle="Strategic thinking in practice"
           isOpen={expandedSection === 'campaigns'}
         >
@@ -320,7 +320,7 @@ export default function Portfolio() {
           <CaseStudyCard
             title="Work on what really matters"
             insight="We too often focus on the how (automate, get leaner, go faster). Yet no one's talking about the what — what will you actually do with all that time our tools will free up?"
-            role="Producer and strategic lead. Identified the positioning gap in Remote's messaging, designed a scalable video template system with clear flexibility guardrails (custom VO here, common VO there), built production pipeline and documentation to execute at volume across multiple products."
+            role="Producer and strategic lead. Identified the positioning gap in Remote's messaging, designed a scalable video template system with clear flexibility guardrails. A modular approach safeguarded the hundreds of iterations across Remote's products and provided the ability to test hooks, CTAs and approaches easily. Built production pipeline and documentation to execute at volume across multiple products."
             localVideos={[
               '/assets/what really matters/WorkOnWhatReallyMatters_Payroll_9-16.mp4',
               '/assets/what really matters/WhatReallyMatters_Payroll_Text_9x16.mp4',
