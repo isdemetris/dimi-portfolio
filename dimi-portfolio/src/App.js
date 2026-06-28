@@ -1,7 +1,90 @@
 import React, { useState } from 'react';
 
+const REMOTE_GALLERY = [
+  { type: 'youtube', id: 'VAHr3zLpbzs' },
+  { type: 'youtube', id: 'cIUHczkp8aY' },
+  { type: 'youtube', id: 'TaWdzrCnrdI', start: 42 },
+  { type: 'youtube', id: 'KBcWk5OAEMA' },
+  { type: 'local', src: '/assets/remotegallery/CM_AskYourCFO_Michiel_01.mp4' },
+  { type: 'local', src: '/assets/remotegallery/ChooseYourHire_1920x1080_Packshot.mp4' },
+  { type: 'local', src: '/assets/remotegallery/Concept01_1920x1080.mp4' },
+  { type: 'local', src: '/assets/remotegallery/DancingMan_1080x1920_Packshot.mp4' },
+  { type: 'local', src: '/assets/remotegallery/NorthStarDemoVideo_16012024_Compressed.mp4' },
+  { type: 'local', src: '/assets/remotegallery/OffMute_1920x1080.mp4' },
+  { type: 'local', src: '/assets/remotegallery/Remote Watchtower.mp4' },
+  { type: 'local', src: '/assets/remotegallery/Revamp_PresentationVideo_Post.mp4' },
+];
+
+function GalleryModal({ onClose }) {
+  return (
+    <div
+      onClick={onClose}
+      style={{
+        position: 'fixed',
+        inset: 0,
+        background: 'rgba(0,0,0,0.85)',
+        zIndex: 1000,
+        overflowY: 'auto',
+        padding: '2rem 1rem',
+      }}
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          maxWidth: '900px',
+          margin: '0 auto',
+        }}
+      >
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+          <h2 style={{ color: '#fff', fontSize: '18px', fontWeight: 500, margin: 0 }}>Work at Remote</h2>
+          <button
+            onClick={onClose}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: '#aaa',
+              fontSize: '24px',
+              cursor: 'pointer',
+              lineHeight: 1,
+              padding: '0.25rem',
+            }}
+          >
+            ×
+          </button>
+        </div>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(380px, 1fr))',
+            gap: '1rem',
+          }}
+        >
+          {REMOTE_GALLERY.map((item, i) => (
+            <div key={i} style={{ borderRadius: '6px', overflow: 'hidden', background: '#111' }}>
+              {item.type === 'youtube' ? (
+                <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
+                  <iframe
+                    src={`https://www.youtube.com/embed/${item.id}${item.start ? `?start=${item.start}` : ''}`}
+                    title={`Remote video ${i + 1}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+                  />
+                </div>
+              ) : (
+                <video src={item.src} controls style={{ width: '100%', display: 'block' }} />
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Portfolio() {
   const [expandedSection, setExpandedSection] = useState(null);
+  const [galleryOpen, setGalleryOpen] = useState(false);
 
   const toggleSection = (section) => {
     setExpandedSection(expandedSection === section ? null : section);
@@ -189,6 +272,8 @@ export default function Portfolio() {
   );
 
   return (
+    <>
+    {galleryOpen && <GalleryModal onClose={() => setGalleryOpen(false)} />}
     <div
       style={{
         background: '#fff',
@@ -231,7 +316,7 @@ export default function Portfolio() {
               fontWeight: 400,
             }}
           >
-            Strategic creative operations leader. I architect how organizations create and deploy video at scale, designing systems, processes, and tools that enable teams of any skill level to contribute at quality.
+            I direct video at scale. Most recently, developing a creative vision for video at Remote where strategy and execution are inseparable - every video feels intentional, unmistakably on-brand. Built a multi-talented team that brings that vision to life across brand, social, product, performance marketing. I'm equally at home in strategy as I am in the edit. I use AI to amplify taste, never replace it.
           </p>
           <p
             style={{
@@ -255,7 +340,7 @@ export default function Portfolio() {
           <CaseStudyCard
             title="Big things start like this"
             insight="Everyone celebrates the billion-dollar valuation. Nobody talks about the Tuesday morning when the founder couldn't make payroll."
-            role="Full production: concept through final delivery. Collaborated with brand director to translate positioning across product range (day-one startup to 1000-person scale) into a visceral creative system. Worked deep into strategic brief to protect the video outcome."
+            role="Full production: concept, writing, and direction through delivery. Established the strategic and creative brief that governed all in-house video production — motion, editing, sound. One unified approach across Remote's entire product range, from startup positioning to enterprise scale."
             youtubeId="Dgf55Ydmy-E"
             localVideos={[
               '/assets/OOH_StartAnywhere_02_YT_15s.mp4',
@@ -267,6 +352,12 @@ export default function Portfolio() {
             title="Work on what really matters"
             insight="We too often focus on the how (automate, get leaner, go faster). Yet no one's talking about the what — what will you actually do with all that time our tools will free up?"
             role="Producer and strategic lead. Identified the positioning gap in Remote's messaging, designed a scalable video template system with clear flexibility guardrails (custom VO here, common VO there), built production pipeline and documentation to execute at volume across multiple products."
+            localVideos={[
+              '/assets/what really matters/WorkOnWhatReallyMatters_Payroll_16-9.mp4',
+              '/assets/what really matters/WorkOnWhatReallyMatters_Payroll_9-16.mp4',
+              '/assets/what really matters/WorkOnWhatReallyMatters_Payroll_9-16 2.mp4',
+              '/assets/what really matters/WhatReallyMatters_Payroll_Text_9x16.mp4',
+            ]}
           />
 
           <p
@@ -285,208 +376,36 @@ export default function Portfolio() {
         <Section
           id="remote"
           title="Building at Remote"
-          subtitle="Scaling creative from 0 to 2000 people"
+          subtitle="Scaling creative across a 2000-person organization"
           isOpen={expandedSection === 'remote'}
         >
-          <div style={{ marginBottom: '2rem' }}>
-            <h3
-              style={{
-                fontSize: '13px',
-                fontWeight: 600,
-                margin: '0 0 0.75rem 0',
-                color: '#1a1a1a',
-                textTransform: 'uppercase',
-                letterSpacing: '0.08em',
-              }}
-            >
-              What I inherited
-            </h3>
-            <p
-              style={{
-                fontSize: '15px',
-                lineHeight: '1.7',
-                margin: 0,
-                color: '#555',
-              }}
-            >
-              Video scattered across brand design. No process, no pre-production thinking, no structure. Early days.
-            </p>
-          </div>
-
-          <div style={{ marginBottom: '2rem' }}>
-            <h3
-              style={{
-                fontSize: '13px',
-                fontWeight: 600,
-                margin: '0 0 0.75rem 0',
-                color: '#1a1a1a',
-                textTransform: 'uppercase',
-                letterSpacing: '0.08em',
-              }}
-            >
-              The design system
-            </h3>
-            <p
-              style={{
-                fontSize: '15px',
-                lineHeight: '1.7',
-                margin: '0 0 0.75rem 0',
-                color: '#555',
-              }}
-            >
-              Respects the brand design system but focuses on how that translates to motion. Includes motion templates (logos, CTAs, typography), custom easing libraries, reusable compositions — practical guidance that lets motion designers move fast while staying on-brand.
-            </p>
-            <p
-              style={{
-                fontSize: '14px',
-                color: '#999',
-                margin: 0,
-                fontStyle: 'italic',
-              }}
-            >
-              The system is tiered: self-serve templates for anyone, deep guidelines for specialists.
-            </p>
-          </div>
-
-          <div style={{ marginBottom: '2rem' }}>
-            <h3
-              style={{
-                fontSize: '13px',
-                fontWeight: 600,
-                margin: '0 0 0.75rem 0',
-                color: '#1a1a1a',
-                textTransform: 'uppercase',
-                letterSpacing: '0.08em',
-              }}
-            >
-              Process &amp; collaboration
-            </h3>
-            <p
-              style={{
-                fontSize: '15px',
-                lineHeight: '1.7',
-                margin: 0,
-                color: '#555',
-              }}
-            >
-              Built templates and frameworks for how projects get created. Documentation of workflow. Cross-functional collaboration patterns that actually work at scale.
-            </p>
-          </div>
-
-          <div style={{ marginBottom: '2rem' }}>
-            <h3
-              style={{
-                fontSize: '13px',
-                fontWeight: 600,
-                margin: '0 0 0.75rem 0',
-                color: '#1a1a1a',
-                textTransform: 'uppercase',
-                letterSpacing: '0.08em',
-              }}
-            >
-              AI as augmentation
-            </h3>
-            <p
-              style={{
-                fontSize: '15px',
-                lineHeight: '1.7',
-                margin: '0 0 0.75rem 0',
-                color: '#555',
-              }}
-            >
-              Script writing agent that helps people with no writing/video experience participate in the process. Better visualization of outcomes before production even starts.
-            </p>
-            <p
-              style={{
-                fontSize: '15px',
-                lineHeight: '1.7',
-                margin: '0 0 0.75rem 0',
-                color: '#555',
-              }}
-            >
-              Performance evaluation tool: built an agent using Google's own ABCD evaluation criteria to proactively judge videos against performance standards. Producers get structured feedback before shipping, not after.
-            </p>
-            <p
-              style={{
-                fontSize: '15px',
-                lineHeight: '1.7',
-                margin: 0,
-                color: '#555',
-              }}
-            >
-              Custom plugins and tools built with AI to amplify team capability across the organization.
-            </p>
-          </div>
-
-          <div style={{ marginBottom: '2rem' }}>
-            <h3
-              style={{
-                fontSize: '13px',
-                fontWeight: 600,
-                margin: '0 0 0.75rem 0',
-                color: '#1a1a1a',
-                textTransform: 'uppercase',
-                letterSpacing: '0.08em',
-              }}
-            >
-              Team &amp; output
-            </h3>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-                gap: '12px',
-                marginBottom: '1rem',
-              }}
-            >
-              <MetricCard label="Video producers" value="4" />
-              <MetricCard label="Specializations" value="4" />
-              <MetricCard label="Year-on-year" value="↑↑" />
-            </div>
-            <p
-              style={{
-                fontSize: '15px',
-                lineHeight: '1.7',
-                margin: 0,
-                color: '#555',
-              }}
-            >
-              Built a specialized team: 2 motion designers, 1 editor, 1 systems/tech focused producer. Each specialized. Output increased every year. Quality went up. What was impossible before is now routine.
-            </p>
-          </div>
-
-          <div
+          <p style={{ fontSize: '15px', lineHeight: '1.7', margin: '0 0 1.25rem 0', color: '#555' }}>
+            Built a creative vision where strategy and execution are inseparable. Every video is intentional, on-brand, unmistakably Remote.
+          </p>
+          <p style={{ fontSize: '15px', lineHeight: '1.7', margin: '0 0 1.25rem 0', color: '#555' }}>
+            The system: motion templates (logos, CTAs, typography), custom easing libraries, reusable compositions. Tiered for self-serve and specialists. Built frameworks for how projects get created—documentation, workflows, collaboration patterns that actually work at scale.
+          </p>
+          <p style={{ fontSize: '15px', lineHeight: '1.7', margin: '0 0 1.25rem 0', color: '#555' }}>
+            AI as amplification: script writing agent that democratizes the process for people without video experience. Performance evaluation tool built on Google's ABCD criteria—producers get feedback before shipping, not after. Custom plugins to amplify team capability.
+          </p>
+          <p style={{ fontSize: '15px', lineHeight: '1.7', margin: '0 0 1.5rem 0', color: '#555' }}>
+            Result: a multi-talented team executing one clear vision. Output increased every year. What was impossible before is now routine. A small, high-performing video function that punches far above its size.
+          </p>
+          <button
+            onClick={() => setGalleryOpen(true)}
             style={{
-              background: '#fafafa',
-              border: '1px solid #e5e5e5',
-              borderRadius: '8px',
-              padding: '1.5rem',
-              marginTop: '2rem',
+              background: 'none',
+              border: '1px solid #1a1a1a',
+              borderRadius: '4px',
+              padding: '0.5rem 1rem',
+              fontSize: '14px',
+              color: '#1a1a1a',
+              cursor: 'pointer',
+              fontFamily: 'inherit',
             }}
           >
-            <p
-              style={{
-                fontSize: '13px',
-                color: '#999',
-                margin: '0 0 0.75rem 0',
-                fontWeight: 600,
-                textTransform: 'uppercase',
-                letterSpacing: '0.08em',
-              }}
-            >
-              What's now possible
-            </p>
-            <p
-              style={{
-                fontSize: '15px',
-                lineHeight: '1.7',
-                margin: 0,
-                color: '#555',
-              }}
-            >
-              A 2000-person organization that knows how to create good video. Standardized processes that don't stifle creativity. Teams that understand not just execution but strategy. A small, high-performing video function that punches far above its size.
-            </p>
-          </div>
+            View work at Remote →
+          </button>
         </Section>
 
         {/* PHILOSOPHY */}
@@ -545,51 +464,70 @@ export default function Portfolio() {
           subtitle="Where I come from"
           isOpen={expandedSection === 'credibility'}
         >
-          <div style={{ marginBottom: '2rem' }}>
+          {[
+            {
+              title: 'd:code:it, London (5+ years)',
+              body: 'Built and led video production for fintech. Worked with JP Morgan, Bank of America, and other heavily regulated clients where precision and compliance aren\'t negotiable. Learned that strong process protects both quality and sanity.',
+              video: '/assets/Visuals for d_code_it stand @ Fintech Connect 2019.mp4',
+            },
+            {
+              title: 'Kompany, Nicosia & London',
+              body: 'Creative director and writer on commercial video campaigns for Lidl, Lay\'s, Snack A Jacks. Conceptualized and directed work from brief through delivery.',
+            },
+            {
+              title: 'ΦΑΚ, Cyprus (co-founder, 2013–present)',
+              body: 'Built an online video production house from scratch. Grew a loyal audience organically, got featured across Greek media and at festivals. Proved you can balance original content with commercial work while building a strong collaborator network.',
+            },
+            {
+              title: 'Vungle Creative Labs, London',
+              body: 'Created advertising for leading mobile games and apps. Work was used as case studies for effective mobile ad engagement.',
+            },
+          ].map(({ title, body, video }, i, arr) => (
+            <div key={i} style={{ marginBottom: i < arr.length - 1 ? '1.75rem' : 0 }}>
+              <h3 style={{ fontSize: '15px', fontWeight: 500, margin: '0 0 0.5rem 0', color: '#1a1a1a' }}>
+                {title}
+              </h3>
+              <p style={{ fontSize: '14px', color: '#777', margin: 0, lineHeight: '1.7' }}>
+                {body}
+              </p>
+              {video && (
+                <video
+                  src={video}
+                  controls
+                  style={{ width: '100%', borderRadius: '6px', display: 'block', marginTop: '0.75rem' }}
+                />
+              )}
+            </div>
+          ))}
+
+          <div style={{ marginTop: '2.5rem' }}>
             <h3
               style={{
-                fontSize: '15px',
-                fontWeight: 500,
-                margin: '0 0 0.5rem 0',
+                fontSize: '13px',
+                fontWeight: 600,
+                margin: '0 0 1rem 0',
                 color: '#1a1a1a',
+                textTransform: 'uppercase',
+                letterSpacing: '0.08em',
               }}
             >
-              d:code:it, London (5+ years)
+              Education
             </h3>
-            <p
-              style={{
-                fontSize: '14px',
-                color: '#777',
-                margin: 0,
-                lineHeight: '1.7',
-              }}
-            >
-              In-house production lead for fintech. Built a video team managing internal and external contractors. Worked with JP Morgan, Bank of America, other heavily regulated clients where precision and compliance aren't negotiable. Learned that strong process protects both quality and sanity.
-            </p>
+            {[
+              'Goldsmiths, MA Image & Communication (Distinction)',
+              'UEL, BA Digital Arts with Moving Image (2:1)',
+            ].map((item, i) => (
+              <p key={i} style={{ fontSize: '14px', color: '#777', margin: '0 0 0.5rem 0', lineHeight: '1.7' }}>
+                {item}
+              </p>
+            ))}
           </div>
 
-          <div>
-            <h3
-              style={{
-                fontSize: '15px',
-                fontWeight: 500,
-                margin: '0 0 0.5rem 0',
-                color: '#1a1a1a',
-              }}
-            >
-              Reality Gaming (spinoff)
-            </h3>
-            <p
-              style={{
-                fontSize: '14px',
-                color: '#777',
-                margin: 0,
-                lineHeight: '1.7',
-              }}
-            >
-              Building something from scratch teaches you what actually matters. No inherited systems, no excuses.
-            </p>
-          </div>
+          <video
+            src="/assets/2021-reel.mp4"
+            controls
+            style={{ width: '100%', borderRadius: '6px', display: 'block', marginTop: '2rem' }}
+          />
         </Section>
 
         {/* FOOTER */}
@@ -632,5 +570,6 @@ export default function Portfolio() {
         </div>
       </div>
     </div>
+    </>
   );
 }
