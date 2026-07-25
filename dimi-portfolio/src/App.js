@@ -358,6 +358,31 @@ export default function Portfolio() {
           subtitle="Video at scale: the Remote way"
           isOpen={expandedSection === 'remote'}
         >
+          <div
+            style={{
+              position: 'relative',
+              paddingBottom: '56.25%',
+              height: 0,
+              borderRadius: '6px',
+              overflow: 'hidden',
+              margin: '0 0 1.25rem 0',
+            }}
+          >
+            <iframe
+              src="https://www.youtube.com/embed/psSstjgRNUg"
+              title="Building at Remote"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                border: 'none',
+              }}
+            />
+          </div>
           <p style={{ fontSize: '15px', lineHeight: '1.7', margin: '0 0 1.25rem 0', color: '#555' }}>
             Built a creative vision where strategy and execution are inseparable. Every video is intentional, on-brand, unmistakably Remote.
           </p>
