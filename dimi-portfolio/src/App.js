@@ -298,6 +298,31 @@ export default function Portfolio() {
           >
             Leading video at <a href="https://remote.com" style={{ color: 'inherit', textDecoration: 'underline' }}>Remote</a> and <a href="https://youtube.com/phaktv" style={{ color: 'inherit', textDecoration: 'underline' }}>ΦΑΚ</a> (independent production channel). Before: <a href="https://dcodeit.com" style={{ color: 'inherit', textDecoration: 'underline' }}>d:code:it</a> (fintech, JP Morgan, BAML), <a href="https://kompanycreative.com" style={{ color: 'inherit', textDecoration: 'underline' }}>Kompany</a> (commercial video production).
           </p>
+          <div
+            style={{
+              position: 'relative',
+              paddingBottom: '56.25%',
+              height: 0,
+              borderRadius: '6px',
+              overflow: 'hidden',
+              margin: '1.25rem 0 0 0',
+            }}
+          >
+            <iframe
+              src="https://www.youtube.com/embed/z_Nm1zu_hfY"
+              title="ΦΑΚ"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                border: 'none',
+              }}
+            />
+          </div>
         </div>
 
         {/* CASE STUDIES */}
@@ -384,16 +409,19 @@ export default function Portfolio() {
             />
           </div>
           <p style={{ fontSize: '15px', lineHeight: '1.7', margin: '0 0 1.25rem 0', color: '#555' }}>
-            Built a creative vision where strategy and execution are inseparable. Every video is intentional, on-brand, unmistakably Remote.
+            Strategy and execution aren't separate here, every video is deliberate, on-brand, unmistakably Remote.
           </p>
           <p style={{ fontSize: '15px', lineHeight: '1.7', margin: '0 0 1.25rem 0', color: '#555' }}>
-            The system: motion templates (logos, CTAs, typography), custom easing libraries, reusable compositions. Tiered for self-serve and specialists. Built frameworks for how projects get created—documentation, workflows, collaboration patterns that actually work at scale.
+            The system behind it: a Motion Design System. Tiered so both self-serve folks and specialists can benefit. Underneath that, real frameworks for how projects get made, docs, workflows, and collaboration patterns that actually hold at scale. I've also built self-serve paid ads tools so marketing teams can launch their own campaigns without needing the video team on standby.
           </p>
           <p style={{ fontSize: '15px', lineHeight: '1.7', margin: '0 0 1.25rem 0', color: '#555' }}>
-            AI as amplification: script writing agent that democratizes the process for people without video experience. Performance evaluation tool built on Google's ABCD criteria—producers get feedback before shipping, not after. Custom plugins to amplify team capability.
+            AI shows up as leverage, not a gimmick: a script-writing agent that lets people with no video background produce something usable, a performance evaluation tool built on Google's ABCD framework so producers get feedback before shipping instead of after, custom plugins that stretch what the team can do.
+          </p>
+          <p style={{ fontSize: '15px', lineHeight: '1.7', margin: '0 0 1.25rem 0', color: '#555' }}>
+            The job itself sits somewhere between creative direction and running performance and technical teams, and a lot of the work is translating between those two worlds.
           </p>
           <p style={{ fontSize: '15px', lineHeight: '1.7', margin: '0 0 1.5rem 0', color: '#555' }}>
-            Result: a multi-talented team executing one clear vision. Output increased every year. What was impossible before is now routine. A small, high-performing video function that punches far above its size.
+            The result is a small team doing a lot: output keeps growing year over year, and what used to be impossible is now just routine.
           </p>
           <button
             onClick={() => setGalleryOpen(true)}
