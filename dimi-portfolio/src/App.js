@@ -10,6 +10,7 @@ const REMOTE_GALLERY = [
   { type: 'local', src: '/assets/remotegallery/Remote-Watchtower.mp4' },
   { type: 'local', src: '/assets/remotegallery/RemoteRecruit_Teaser.mp4' },
   { type: 'local', src: '/assets/remotegallery/Revamp_PresentationVideo_Post.mp4' },
+  { type: 'local', src: '/assets/remotegallery/Trust-Main.mp4' },
 ];
 
 function GalleryModal({ onClose }) {
