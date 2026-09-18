@@ -299,31 +299,6 @@ export default function Portfolio() {
           >
             Leading video at <a href="https://remote.com" style={{ color: 'inherit', textDecoration: 'underline' }}>Remote</a> and <a href="https://youtube.com/phaktv" style={{ color: 'inherit', textDecoration: 'underline' }}>ΦΑΚ</a> (independent production channel). Before: <a href="https://dcodeit.com" style={{ color: 'inherit', textDecoration: 'underline' }}>d:code:it</a> (fintech, JP Morgan, BAML), <a href="https://kompanycreative.com" style={{ color: 'inherit', textDecoration: 'underline' }}>Kompany</a> (commercial video production).
           </p>
-          <div
-            style={{
-              position: 'relative',
-              paddingBottom: '56.25%',
-              height: 0,
-              borderRadius: '6px',
-              overflow: 'hidden',
-              margin: '1.25rem 0 0 0',
-            }}
-          >
-            <iframe
-              src="https://www.youtube.com/embed/z_Nm1zu_hfY"
-              title="ΦΑΚ"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                border: 'none',
-              }}
-            />
-          </div>
         </div>
 
         {/* CASE STUDIES */}
@@ -526,12 +501,13 @@ export default function Portfolio() {
             {
               title: 'ΦΑΚ, Cyprus (co-founder, 2013–present)',
               body: 'Built an online video production house from scratch. Grew a loyal audience organically, got featured across Greek media and at festivals. Proved you can balance original content with commercial work while building a strong collaborator network.',
+              youtubeId: 'z_Nm1zu_hfY',
             },
             {
               title: 'Vungle Creative Labs, London',
               body: 'Created advertising for leading mobile games and apps. Work was used as case studies for effective mobile ad engagement.',
             },
-          ].map(({ title, body, video }, i, arr) => (
+          ].map(({ title, body, video, youtubeId }, i, arr) => (
             <div key={i} style={{ marginBottom: i < arr.length - 1 ? '1.75rem' : 0 }}>
               <h3 style={{ fontSize: '15px', fontWeight: 500, margin: '0 0 0.5rem 0', color: '#1a1a1a' }}>
                 {title}
@@ -545,6 +521,33 @@ export default function Portfolio() {
                   controls
                   style={{ width: '100%', borderRadius: '6px', display: 'block', marginTop: '0.75rem' }}
                 />
+              )}
+              {youtubeId && (
+                <div
+                  style={{
+                    position: 'relative',
+                    paddingBottom: '56.25%',
+                    height: 0,
+                    borderRadius: '6px',
+                    overflow: 'hidden',
+                    marginTop: '0.75rem',
+                  }}
+                >
+                  <iframe
+                    src={`https://www.youtube.com/embed/${youtubeId}`}
+                    title={title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      border: 'none',
+                    }}
+                  />
+                </div>
               )}
             </div>
           ))}
