@@ -507,7 +507,30 @@ export default function Portfolio() {
               title: 'Vungle Creative Labs, London',
               body: 'Created advertising for leading mobile games and apps. Work was used as case studies for effective mobile ad engagement.',
             },
-          ].map(({ title, body, video, youtubeId }, i, arr) => (
+            {
+              title: 'Reality Gaming',
+              body: 'Reality Gaming was a UK-licensed app that let users play real games with real-money bets. I worked on the performance marketing ads that helped take it to #1 in the UK App Store Casino category in 2017. We collaborated with Voodoo to feature some of their games, and also built our own, where I contributed motion design to the UI, video explainers, loaders and more.',
+              groups: [
+                {
+                  label: 'Performance ads',
+                  videos: ['/assets/rg/Rewind_IGS.mp4', '/assets/rg/VL_Reviews_Snap.mp4'],
+                },
+                {
+                  label: 'UI motion',
+                  videos: ['/assets/rg/UI/Radial_Confetti_Celebration.mp4', '/assets/rg/UI/YOUWIN.mp4'],
+                },
+              ],
+              subBody: {
+                title: 'Before that: Flick a Trade',
+                body: 'Flick a Trade was a trading game where players put real stakes on the line. It later matured from just a game into real-money accounts, as covered by Finance Magnates.',
+                link: {
+                  href: 'https://www.financemagnates.com/fintech/investing/flick-a-trade-maturing-from-just-a-game-to-real-money-accounts/',
+                  text: 'Read the article →',
+                },
+                videos: ['/assets/rg/fat/FaT_LandingPageVideo_28Sec_AD_19.01.17_GER_v1.mp4'],
+              },
+            },
+          ].map(({ title, body, video, youtubeId, groups, subBody }, i, arr) => (
             <div key={i} style={{ marginBottom: i < arr.length - 1 ? '1.75rem' : 0 }}>
               <h3 style={{ fontSize: '15px', fontWeight: 500, margin: '0 0 0.5rem 0', color: '#1a1a1a' }}>
                 {title}
@@ -547,6 +570,34 @@ export default function Portfolio() {
                       border: 'none',
                     }}
                   />
+                </div>
+              )}
+              {groups && groups.map((g) => (
+                <div key={g.label} style={{ marginTop: '1rem' }}>
+                  <p style={{ fontSize: '12px', fontWeight: 600, color: '#1a1a1a', textTransform: 'uppercase', letterSpacing: '0.08em', margin: '0 0 0.5rem 0' }}>
+                    {g.label}
+                  </p>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.75rem' }}>
+                    {g.videos.map((src) => (
+                      <video key={src} src={src} controls style={{ width: '100%', borderRadius: '6px', display: 'block' }} />
+                    ))}
+                  </div>
+                </div>
+              ))}
+              {subBody && (
+                <div style={{ marginTop: '1.75rem' }}>
+                  <h4 style={{ fontSize: '14px', fontWeight: 500, margin: '0 0 0.5rem 0', color: '#1a1a1a' }}>
+                    {subBody.title}
+                  </h4>
+                  <p style={{ fontSize: '14px', color: '#777', margin: '0 0 0.5rem 0', lineHeight: '1.7' }}>
+                    {subBody.body}{' '}
+                    <a href={subBody.link.href} target="_blank" rel="noreferrer" style={{ color: '#1a1a1a', textDecoration: 'underline' }}>
+                      {subBody.link.text}
+                    </a>
+                  </p>
+                  {subBody.videos.map((src) => (
+                    <video key={src} src={src} controls style={{ width: '100%', borderRadius: '6px', display: 'block', marginTop: '0.75rem' }} />
+                  ))}
                 </div>
               )}
             </div>
