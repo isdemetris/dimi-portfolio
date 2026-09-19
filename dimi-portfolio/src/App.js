@@ -506,9 +506,10 @@ export default function Portfolio() {
             {
               title: 'Vungle Creative Labs, London',
               body: 'Created advertising for leading mobile games and apps. Work was used as case studies for effective mobile ad engagement.',
+              video: '/assets/2021-reel.mp4',
             },
             {
-              title: 'Reality Gaming',
+              title: 'Reality Gaming, London',
               body: 'Reality Gaming was a UK-licensed app that let users play real games with real-money bets. I worked on the performance marketing ads that helped take it to #1 in the UK App Store Casino category in 2017. We collaborated with Voodoo to feature some of their games, and also built our own, where I contributed motion design to the UI, video explainers, loaders and more.',
               groups: [
                 {
@@ -625,12 +626,6 @@ export default function Portfolio() {
               </p>
             ))}
           </div>
-
-          <video
-            src="/assets/2021-reel.mp4"
-            controls
-            style={{ width: '100%', borderRadius: '6px', display: 'block', marginTop: '2rem' }}
-          />
         </Section>
 
         {/* FOOTER */}
