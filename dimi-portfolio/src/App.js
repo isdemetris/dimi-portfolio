@@ -352,6 +352,49 @@ export default function Portfolio() {
           </p>
         </Section>
 
+        {/* REMOTE REBRAND */}
+        <Section
+          id="rebrand"
+          title="The Remote rebrand"
+          subtitle="Giving a new identity its motion"
+          isOpen={expandedSection === 'rebrand'}
+        >
+          <div
+            style={{
+              position: 'relative',
+              paddingBottom: '56.25%',
+              height: 0,
+              borderRadius: '6px',
+              overflow: 'hidden',
+              margin: '0 0 1.25rem 0',
+            }}
+          >
+            <iframe
+              src="https://www.youtube.com/embed/C81Gi8cO1VY"
+              title="Remote rebrand campaign"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                border: 'none',
+              }}
+            />
+          </div>
+          <p style={{ fontSize: '15px', lineHeight: '1.7', margin: '0 0 1.25rem 0', color: '#555' }}>
+            When Remote launched its new identity and first global brand campaign, "For a World That Works", I led the video team through it. Everything about how the new identity moves was on me.
+          </p>
+          <p style={{ fontSize: '15px', lineHeight: '1.7', margin: '0 0 1.25rem 0', color: '#555' }}>
+            Working alongside Collins, I developed the motion identity and wrote the brand motion guidelines, so that every team making video at Remote could move the brand the same way.
+          </p>
+          <p style={{ fontSize: '15px', lineHeight: '1.7', margin: 0, color: '#555' }}>
+            The same thinking carried into the video campaign for out-of-home and paid, made with Stink Studios. As part of the team, I made sure the identity in motion showed up faithfully in every deliverable.
+          </p>
+        </Section>
+
         {/* BUILDING AT REMOTE */}
         <Section
           id="remote"
