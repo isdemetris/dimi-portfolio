@@ -301,6 +301,71 @@ export default function Portfolio() {
           </p>
         </div>
 
+        {/* REMOTE REBRAND */}
+        <Section
+          id="rebrand"
+          title="The Remote rebrand"
+          subtitle="Giving a new identity its motion"
+          isOpen={expandedSection === 'rebrand'}
+        >
+          <div
+            style={{
+              position: 'relative',
+              paddingBottom: '56.25%',
+              height: 0,
+              borderRadius: '6px',
+              overflow: 'hidden',
+              margin: '0 0 1.25rem 0',
+            }}
+          >
+            <iframe
+              src="https://www.youtube.com/embed/C81Gi8cO1VY"
+              title="Remote rebrand campaign"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                border: 'none',
+              }}
+            />
+          </div>
+          <p style={{ fontSize: '15px', lineHeight: '1.7', margin: '0 0 1.25rem 0', color: '#555' }}>
+            When Remote launched its new identity and first global brand campaign, "For a World That Works", I led the video team through it. Everything about how the new identity moves was on me.
+          </p>
+          <p style={{ fontSize: '15px', lineHeight: '1.7', margin: '0 0 1.25rem 0', color: '#555' }}>
+            Working alongside Collins, I developed the motion identity and wrote the brand motion guidelines, so that every team making video at Remote could move the brand the same way.
+          </p>
+          <p style={{ fontSize: '15px', lineHeight: '1.7', margin: '0 0 1.5rem 0', color: '#555' }}>
+            The same thinking carried into the video campaign for out-of-home and paid, made with Stink Studios. As part of the team, I made sure the identity in motion showed up faithfully in every deliverable.
+          </p>
+          <style>{`
+            .rebrand-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+            @media (max-width: 520px) { .rebrand-grid { grid-template-columns: repeat(2, 1fr); } }
+          `}</style>
+          <div className="rebrand-grid">
+            {[
+              { src: '/assets/rebrand/ooh-madrid-airport.jpg', alt: 'Remote out-of-home screen at Madrid airport: Hire and pay globally' },
+              { src: '/assets/rebrand/ooh-san-jose-billboard.jpg', alt: 'Remote billboard in San Jose: Designed in Taipei, Managed in San Jose, Paid through Remote' },
+              { src: '/assets/rebrand/ooh-paris-airport.jpg', alt: 'Remote out-of-home screen at Paris airport, in French' },
+              { src: '/assets/rebrand/ooh-las-vegas.jpg', alt: 'Remote building-wrap billboard in Las Vegas' },
+              { src: '/assets/rebrand/ooh-new-york-subway.jpg', alt: 'Remote out-of-home screen in a New York subway station' },
+              { src: '/assets/rebrand/ooh-frankfurt-airport.jpg', alt: 'Remote out-of-home screen at Frankfurt airport: Shot in Perugia, Edited in New York, Paid through Remote' },
+            ].map(({ src, alt }) => (
+              <img
+                key={src}
+                src={src}
+                alt={alt}
+                loading="lazy"
+                style={{ width: '100%', aspectRatio: '4 / 5', objectFit: 'cover', borderRadius: '6px', display: 'block' }}
+              />
+            ))}
+          </div>
+        </Section>
+
         {/* CASE STUDIES */}
         <Section
           id="campaigns"
@@ -349,49 +414,6 @@ export default function Portfolio() {
             }}
           >
             Three campaigns, same pattern: strategic insight → system design → production excellence.
-          </p>
-        </Section>
-
-        {/* REMOTE REBRAND */}
-        <Section
-          id="rebrand"
-          title="The Remote rebrand"
-          subtitle="Giving a new identity its motion"
-          isOpen={expandedSection === 'rebrand'}
-        >
-          <div
-            style={{
-              position: 'relative',
-              paddingBottom: '56.25%',
-              height: 0,
-              borderRadius: '6px',
-              overflow: 'hidden',
-              margin: '0 0 1.25rem 0',
-            }}
-          >
-            <iframe
-              src="https://www.youtube.com/embed/C81Gi8cO1VY"
-              title="Remote rebrand campaign"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                border: 'none',
-              }}
-            />
-          </div>
-          <p style={{ fontSize: '15px', lineHeight: '1.7', margin: '0 0 1.25rem 0', color: '#555' }}>
-            When Remote launched its new identity and first global brand campaign, "For a World That Works", I led the video team through it. Everything about how the new identity moves was on me.
-          </p>
-          <p style={{ fontSize: '15px', lineHeight: '1.7', margin: '0 0 1.25rem 0', color: '#555' }}>
-            Working alongside Collins, I developed the motion identity and wrote the brand motion guidelines, so that every team making video at Remote could move the brand the same way.
-          </p>
-          <p style={{ fontSize: '15px', lineHeight: '1.7', margin: 0, color: '#555' }}>
-            The same thinking carried into the video campaign for out-of-home and paid, made with Stink Studios. As part of the team, I made sure the identity in motion showed up faithfully in every deliverable.
           </p>
         </Section>
 
