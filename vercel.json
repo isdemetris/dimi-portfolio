@@ -1,4 +1,12 @@
 {
   "buildCommand": "cd dimi-portfolio && npm install && npm run build",
-  "outputDirectory": "dimi-portfolio/build"
+  "outputDirectory": "dimi-portfolio/build",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive, nosnippet, noimageindex" }
+      ]
+    }
+  ]
 }
