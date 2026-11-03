@@ -364,6 +364,26 @@ export default function Portfolio() {
               />
             ))}
           </div>
+          <p style={{ fontSize: '14px', lineHeight: '1.7', margin: '1.5rem 0 0 0', color: '#777' }}>
+            Press:{' '}
+            <a
+              href="https://www.creativeboom.com/work/collins-centres-a-new-identity-for-a-payroll-platform-on-banknote-colours-and-building-blocks/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: 'inherit', textDecoration: 'underline' }}
+            >
+              Creative Boom
+            </a>
+            {' · '}
+            <a
+              href="https://marketingchief.com/news/remote-launches-new-global-brand-campaign-and-identity"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: 'inherit', textDecoration: 'underline' }}
+            >
+              Marketing Chief
+            </a>
+          </p>
         </Section>
 
         {/* CASE STUDIES */}
